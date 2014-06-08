@@ -1,0 +1,9 @@
+.mod {
+    width: 5em; /* it will expand to fit content */
+}
+.text, textarea {
+    font-family: monospace
+}
+textarea {
+    width: 100%
+}

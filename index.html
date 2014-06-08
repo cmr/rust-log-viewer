@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="rust-log-viewer">
+    <head>
+        <title>Rust Log Viewer</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+
+    <body ng-controller="Viewer">
+        <textarea class="form-control" rows="3" ng-model="input"></textarea>
+
+        <div>
+            <form class="form-inline" role="form">
+                <div class="form-group">
+                    <label for="moduleFilter">Module Filter</label>
+                    <input ng-model="module_filter" type="text" class="form-control" id="moduleFilter">
+                </div>
+                <div class="form-group">
+                    <label for="contentFilter">Content Filter</label>
+                    <input ng-model="content_filter" type="text" class="form-control" id="contentFilter">
+                </div>
+            </form>
+        </div>
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>module</th>
+                    <th>content</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="line in lines" class="{{line.level}}">
+                    <td class="mod">{{line.module}}</td>
+                    <td class="text">{{line.text}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+        <script src="./app.js"></script>
+    </body>
+</html>
