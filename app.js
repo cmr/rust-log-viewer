@@ -23,7 +23,7 @@
 
     app.controller("Viewer", ['$scope', function($scope) {
         function search(obj) {
-            return obj.module.contains($scope.module_filter) && obj.text.contains($scope.content_filter);
+            return (obj.module.indexOf($scope.module_filter) !== -1) && (obj.text.indexOf($scope.content_filter) !== -1);
         }
 
         function refilter() {
