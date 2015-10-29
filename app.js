@@ -1,7 +1,7 @@
 (function() {
     var name_mappings = {
         DEBUG: "info",
-        WARNING: "warning",
+        WARN: "warning",
         ERROR: "danger",
         INFO: "info"
     };
